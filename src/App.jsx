@@ -7,14 +7,14 @@ import FormularioPelicula from './components/FormularioPelicula';
 const App = () => {
   const [peliculas, setPeliculas] = useState([]);
   const [nuevaPelicula, setNuevaPelicula] = useState({
-    titulo: '',
-    fechaEstreno: '',
-    productor: '',
-    portada: ''
+    title: '',
+    director: '',
+    image: '',
+    date: ''
   });
   const [peliculaEditar, setPeliculaEditar] = useState(null);
 
-  const URL_PELICULAS = 'https://66fd5e87699369308954eeed.mockapi.io/api/v1/Pelicula';
+  const URL_PELICULAS = 'https://valuable-francine-laravel-proyecto-d4bd771b.koyeb.app/api/peliculas';
 
   useEffect(() => {
     const obtenerPeliculas = async () => {
@@ -39,7 +39,7 @@ const App = () => {
     try {
       const respuesta = await axios.post(URL_PELICULAS, nuevaPelicula);
       setPeliculas([...peliculas, respuesta.data]);
-      setNuevaPelicula({ titulo: '', fechaEstreno: '', productor: '', portada: '' });
+      setNuevaPelicula({ title: '', director: '', image: '', date: '' });
     } catch (error) {
       console.error('Error al agregar la película', error);
     }
@@ -57,7 +57,7 @@ const App = () => {
         pelicula.id === peliculaEditar.id ? respuesta.data : pelicula
       ));
       setPeliculaEditar(null);
-      setNuevaPelicula({ titulo: '', fechaEstreno: '', productor: '', portada: '' });
+      setNuevaPelicula({ title: '', director: '', image: '', date: '' });
     } catch (error) {
       console.error('Error al actualizar la película', error);
     }

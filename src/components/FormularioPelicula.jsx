@@ -4,7 +4,7 @@ const FormularioPelicula = ({ peliculaEditar, nuevaPelicula, cambio, agregarPeli
 
   // Función para manejar el envío del formulario
   const manejarSubmit = (e) => {
-    e.preventDefault();  // Evita que se recargue la página
+    e.preventDefault(); // Evita que se recargue la página
     if (peliculaEditar) {
       actualizarPelicula();
     } else {
@@ -18,38 +18,38 @@ const FormularioPelicula = ({ peliculaEditar, nuevaPelicula, cambio, agregarPeli
       
       <input
         type="text"
-        name="titulo"
+        name="title"
         placeholder="Título"
-        value={nuevaPelicula.titulo}
+        value={nuevaPelicula.title}
         onChange={cambio}
-        required  // Campo obligatorio
-      />
-      
-      <input
-        type="date"
-        name="fechaEstreno"
-        placeholder="Fecha de Estreno"
-        value={nuevaPelicula.fechaEstreno}
-        onChange={cambio}
-        required  // Campo obligatorio
+        required // Campo obligatorio
       />
       
       <input
         type="text"
-        name="productor"
-        placeholder="Productor"
-        value={nuevaPelicula.productor}
+        name="director"
+        placeholder="Director"
+        value={nuevaPelicula.director}
         onChange={cambio}
-        required  // Campo obligatorio
+        required // Campo obligatorio
       />
       
       <input
         type="url"
-        name="portada"
-        placeholder="URL de la portada"
-        value={nuevaPelicula.portada}
+        name="image"
+        placeholder="URL de la Imagen"
+        value={nuevaPelicula.image}
         onChange={cambio}
-        required  // Campo obligatorio
+        required // Campo obligatorio
+      />
+      
+      <input
+        type="date"
+        name="date"
+        placeholder="Fecha de Estreno"
+        value={nuevaPelicula.date}
+        onChange={cambio}
+        required // Campo obligatorio
       />
       
       <button type="submit">
