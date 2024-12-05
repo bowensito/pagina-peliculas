@@ -14,7 +14,7 @@ const App = () => {
   });
   const [peliculaEditar, setPeliculaEditar] = useState(null);
 
-  const URL_PELICULAS = 'https://valuable-francine-laravel-proyecto-d4bd771b.koyeb.app/api/peliculas';
+  const URL_PELICULAS = 'valuable-francine-laravel-proyecto-d4bd771b.koyeb.app/api/peliculas';
 
   useEffect(() => {
     const obtenerPeliculas = async () => {
